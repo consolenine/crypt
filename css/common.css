@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: linear-gradient( 112.1deg, rgb(160, 183, 246) 11.4%, rgb(252, 170, 255) 70.2% );
+
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 18px;
+  font-family: 'proxima-nova', sans-serif;
+}
+body {
+    overflow: overlay;
+}
+/* -----------------------Common Classes-------------------- */
+/* -----Containers---- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.root-container {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient( 112.1deg, rgb(11 17 33) 11.4%, rgb(13 14 19) 70.2% );
+  /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(background.jpg); */
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.cntnr-full {
+    width: 100%;
+}
+.cntnr-vertical {
+    flex-direction: column;
+}
+
+/* -----Buttons----- */
+.button {
+    position: relative;
+
+    min-height: 35px;
+    max-height: 50px;
+    min-width: 150px;
+    width: fit-content;
+    padding: 10px 30px;
+    cursor: pointer;
+    z-index: 100;
+}
+.button-primary {
+    box-shadow: 0 0 20px 9px #4646461f;
+    border: none;
+    transition: .5s;
+    color: white;
+    font-weight: bold;
+}
+.button-primary::before {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(to right, #522f75,#7a1a8a);
+    z-index: -10;
+    transition: 0.5s ease;
+}
+.button-secondary {
+    background-color: white;
+    text-decoration: underline;
+    border: none;
+}
+.button-tertiary {
+
+}
+.button-warning {
+
+}
+.heading-txt {
+  color: white;
+  margin: 18px 9px;
+}
+.subheading-txt {
+  color: rgb(203, 203, 203);
+}
+.error-txt {
+    display: none;
+    color: red;
+    height: 24px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    font-size: 0.7rem;
+    padding: 4px 6px;
+}
+
+/* -----Forms----- */
+.form-container {
+  height: 380px;
+  width: 380px;
+  background: #ffff;
+  padding: 40px 10px 15px 10px;
+  border-radius: 30px;
+  justify-content: flex-start;
+  gap: 30px;
+  overflow: hidden;
+}
+.form-header {
+  width: 80%;
+  gap: 10px;
+}
+.form-body {
+  position: relative;
+  left: 100%;
+  transform: translateX(-25%);
+  flex-wrap: nowrap;
+  width: 200%;
+  gap: 20px;
+  transition: 0.5s;
+}
+.form {
+  width: 100%;
+  gap: 10px;
+}
+.form label {
+  color: #777;
+  font-size: 12px;
+}
+
+.input-group{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.input-field{
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    background: transparent;
+}
+.input-field:focus-visible {
+    padding-left: 10px;
+}
+.checkbox {
+    width: 18px;
+    height: 18px;
+}
+.checkbox + label {
+    line-height: 18px;
+}
+.form button[type="submit"] {
+    margin-top: 10px;
+}
+/* -------Popups and Dialogs------- */
+.small-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    background: hsl(0deg, 0%, 10%);
+    box-shadow: 0px 0px 0px 1000px hsla(0deg, 0%, 10%, 0.9);
+    z-index: 999;
+}
+.small-popup.active {
+    display: block !important;
+}
+.small-popup h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.tooltip-parent {
+  position: relative;
+}
+.tooltip-parent:hover {
+  transform: scale(1);
+}
+.tooltip-big {
+  position: absolute;
+  bottom: -20px;
+  left: 65px;
+  display: none;
+  width: 150px;
+  min-height: 100px;
+  height: fit-content;
+  background-color: rgb(122, 99, 126);
+  border-radius: 15px;
+
+  padding: 8px;
+  gap: 10px;
+}
+.tooltip-big::before {
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: 20px;
+  left: -15px;
+
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent; 
+  border-right:20px solid rgb(122, 99, 126); 
+}
+.tooltip-big.active {
+  display: flex;
+}
+.tooltip-big h6 {
+  color: white;
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.tooltip-big h6:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}

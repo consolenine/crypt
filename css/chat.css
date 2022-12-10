@@ -1,0 +1,218 @@
+.chat-container {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 60px);
+    border-radius: 25px;
+    background-color: rgba(121, 3, 94, 0.1);
+}
+.panel {
+    position: relative;
+    width: 400px;
+    min-width: 300px;
+    height: 100%;
+}
+.panel-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: calc(100% - 20px);
+    width: 80px;
+    border-radius: 25px;
+    background-color: rgba(97, 51, 120, 0.2);
+    z-index: 2;
+}
+.panel-right {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(36, 28, 41, 0.2);
+    z-index: 1;
+}
+.panel-content {
+    justify-content: space-between;
+    height: 100%;
+    padding: 30px 10px;
+    gap: 20px;
+}
+.panel-content-main {
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+.panel-content-header {
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.panel-content-body {
+    width: 100%;
+    gap: 10px;
+}
+.panel-content-footer {
+    height: 60px;
+    width: 100%;
+}
+.panel-body-item {
+    min-height: 30px;
+    width: 100%;
+    padding: 8px 12px;
+}
+.panel-body-item:hover {
+    background-color: rgba(97, 51, 120, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+}
+.panel-body-item.no-change:hover {
+    background-color: inherit;
+    cursor: auto;
+}
+.panel-right .panel-content {
+    align-items: flex-start;
+    position: absolute;
+    top: 0%;
+    left: 100px;
+    width: calc(100% - 110px);
+}
+
+.card-header-img {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: rgb(122, 99, 126);
+}
+.card-header-img.active {
+    background-color: white;
+    transform: scale(1.1);
+}
+.card-header-img:hover {
+    transform: scale(1.1);
+}
+.card-header-img span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.card-header-img.active span {
+    color: black;   
+}
+
+.chat-content {
+    width: 70%;
+    height: 100%;
+}
+.chat-content .panel-content-main {
+    height: calc(100% - 80px);
+}
+.chat-content .panel-content-body {
+    width: calc(100% - 12px);
+    justify-content: flex-start;
+    gap: 10px;
+
+    overflow-y: scroll;
+}
+
+.message-card {
+    padding-left: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px;
+}
+.message-card:nth-child(even) {
+    background-color: rgba(36, 28, 41, 0.4);
+}
+.message-card-header {
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    color: rgb(173, 173, 173);
+    font-size: 0.6rem;
+}
+.message-card-header-details {
+    align-items: flex-start;
+    gap: 5px;
+}
+.message-card-header .user-ico-img {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: rgb(122, 99, 126);
+}
+.message-card-content {
+    width: 100%;
+    text-align: left;
+}
+.message-card-text {
+    color: rgb(173,173,173);
+    font-size: 0.8rem;
+}
+
+
+#chatbox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(97, 51, 120, 0.2);
+    border-radius: 25px;
+    padding: 8px 16px;
+    gap: 10px;
+
+    justify-content: space-between;
+}
+
+#chatbox input[type="text"] {
+    height: 90%;
+    flex: 1;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    background: none;
+}
+#chatbox input[type="text"]:focus-visible {
+    border: 1px solid white;
+    padding-left: 10px;
+    color: rgb(173, 173, 173);
+}
+
+#chatForm {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 380px;
+    width: 380px;
+    transform: translate(-50%, -50%);
+    z-index: 21;
+}
+.background-blur {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    z-index: 20;
+}
+
+@media screen and (max-width: 600px) {
+    .chat-container {
+        justify-content: flex-start;
+        gap: 5px;
+    }
+    .sidebar {
+        width: 80px !important;
+        min-width: 80px;
+    }
+    .user-list {
+        display: none;
+    }
+    .chat-content {
+        width: calc(100% - 85px);
+    }
+    
+}
